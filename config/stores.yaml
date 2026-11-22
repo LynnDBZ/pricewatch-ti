@@ -1,0 +1,45 @@
+# Tiendas que el usuario decide vigilar ("fuentes controladas").
+# type: next_falabella | next_ripley | vtex_api | css
+# min_price: descarta accesorios baratos que se cuelan en la búsqueda (en la moneda de la tienda)
+stores:
+  - name: Falabella
+    type: next_falabella
+    start_url: https://www.falabella.com.pe/falabella-pe/category/cat40712/Laptops
+    currency: PEN
+    max_pages: 3
+    min_price: 500
+
+  - name: Ripley
+    type: next_ripley
+    start_url: https://simple.ripley.com.pe/tecnologia/computacion/laptops
+    currency: PEN
+    max_pages: 3
+    min_price: 500
+
+  - name: Promart
+    type: vtex_api            # lee la API pública de catálogo de VTEX
+    start_url: https://www.promart.pe/tecnologia/laptops?PS=1
+    api_query: laptop
+    category_regex: '^(laptops?|notebooks?|ultrabooks?|macbooks?|chromebooks?|port[aá]tiles?)\b'   # solo categorías de laptops
+    currency: PEN
+    max_pages: 4              # 50 productos por lote
+    min_price: 500
+
+  - name: Coolbox
+    type: vtex_api
+    start_url: https://www.coolbox.pe/computo/laptops
+    api_query: laptop
+    category_regex: '^(laptops?|notebooks?|ultrabooks?|macbooks?|chromebooks?|port[aá]tiles?)\b'   # solo categorías de laptops
+    currency: PEN
+    max_pages: 4
+    min_price: 500
+
+  # Sodimac comparte plataforma y vendedores (marketplace) con Falabella: se deja apagada
+  # para no duplicar productos. Cámbiala a true si quieres incluirla.
+  - name: Sodimac
+    enabled: false
+    type: next_falabella
+    start_url: https://www.sodimac.com.pe/sodimac-pe/lista/cat40712/Laptops
+    currency: PEN
+    max_pages: 3
+    min_price: 500

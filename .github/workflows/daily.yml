@@ -1,0 +1,41 @@
+name: Reporte diario
+on:
+  schedule:
+    - cron: "0 12 * * *"      # 12:00 UTC = 07:00 en Perú
+  workflow_dispatch:           # también se puede lanzar a mano
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install .
+
+      # Persistencia del historial entre ejecuciones (clave nueva por corrida, restaura la última)
+      - uses: actions/cache@v4
+        with:
+          path: data
+          key: pricewatch-db-${{ github.run_id }}
+          restore-keys: pricewatch-db-
+
+      - name: Ejecutar bot
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: pricewatch run --send-email
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reporte-y-panel
+          path: |
+            reports/
+            docs/index.html
+            data/history.csv

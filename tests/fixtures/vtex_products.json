@@ -1,0 +1,115 @@
+[
+ {
+  "productName": "Laptop Lenovo V15 G5 Intel Core i3 8GB 256GB SSD",
+  "link": "https://www.promart.pe/laptop-lenovo-v15-g5/p",
+  "categories": [
+   "/Computo/Laptops/",
+   "/Computo/"
+  ],
+  "items": [
+   {
+    "images": [
+     {
+      "imageUrl": "https://promart.vteximg.com.br/a.jpg"
+     }
+    ],
+    "sellers": [
+     {
+      "commertialOffer": {
+       "Price": 1849.0,
+       "ListPrice": 2099.0,
+       "AvailableQuantity": 5
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "productName": "Mouse inalámbrico",
+  "link": "/mouse-inalambrico/p",
+  "categories": [
+   "/Computo/Accesorios/Mouse/"
+  ],
+  "items": [
+   {
+    "images": [],
+    "sellers": [
+     {
+      "commertialOffer": {
+       "Price": 39.9,
+       "AvailableQuantity": 50
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "productName": "Cable Apple USB-C a MagSafe3 para MacBook",
+  "link": "/cable-magsafe/p",
+  "categories": {
+   "type": "json",
+   "json": [
+    "/Cómputo/Accesorios para laptops/Cables/"
+   ]
+  },
+  "items": [
+   {
+    "images": [],
+    "sellers": [
+     {
+      "commertialOffer": {
+       "Price": 599.0,
+       "AvailableQuantity": 9
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "productName": "MacBook Air 13 M5",
+  "link": "/macbook-air/p",
+  "categories": {
+   "type": "json",
+   "json": [
+    "/Cómputo/Laptops/",
+    "/Cómputo/"
+   ]
+  },
+  "items": [
+   {
+    "images": [],
+    "sellers": [
+     {
+      "commertialOffer": {
+       "Price": 5799.0,
+       "AvailableQuantity": 3
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "productName": "Laptop agotada",
+  "link": "/laptop-agotada/p",
+  "categories": [
+   "/Computo/Laptops/"
+  ],
+  "items": [
+   {
+    "images": [],
+    "sellers": [
+     {
+      "commertialOffer": {
+       "Price": 999.0,
+       "AvailableQuantity": 0
+      }
+     }
+    ]
+   }
+  ]
+ }
+]
